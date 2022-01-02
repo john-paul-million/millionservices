@@ -6,7 +6,11 @@
 
   <groupId>com.million</groupId>
   <artifactId>millionservices</artifactId>
+  <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
+  <modules>
+    <module>customer</module>
+  </modules>
 
   <name>millionservices</name>
   <!-- FIXME change it to the project's website -->
