@@ -1,7 +1,16 @@
 package com.million.customer;
 
-public record CustomerRegistrationRequest(
-        String firstName,
-        String lastName,
-        String email) {
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class CustomerRegistrationRequest {
+    private String firstName;
+    private String lastName;
+    private String email;
 }

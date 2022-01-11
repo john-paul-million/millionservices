@@ -15,10 +15,10 @@ public class NotificationService {
     public void send(NotificationRequest notificationRequest) {
         notificationRepository.save(
                 Notification.builder()
-                        .toCustomerId(notificationRequest.toCustomerId())
-                        .toCustomerEmail(notificationRequest.toCustomerName())
+                        .toCustomerId(notificationRequest.getToCustomerId())
+                        .toCustomerEmail(notificationRequest.getToCustomerName())
                         .sender("Million Services")
-                        .message(notificationRequest.message())
+                        .message(notificationRequest.getMessage())
                         .sentAt(LocalDateTime.now())
                         .build()
         );

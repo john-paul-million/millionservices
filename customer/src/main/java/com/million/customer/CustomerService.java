@@ -20,9 +20,9 @@ public class CustomerService {
 
     public void registerCustomer(CustomerRegistrationRequest request) {
         Customer customer = Customer.builder()
-                .firstName(request.firstName())
-                .lastName(request.lastName())
-                .email(request.email())
+                .firstName(request.getFirstName())
+                .lastName(request.getLastName())
+                .email(request.getEmail())
                 .build();
 
         // todo: check if email valid
@@ -32,7 +32,7 @@ public class CustomerService {
 
         FraudCheckResponse fraudCheckResponse = fraudClient.isFraudster(customer.getId());
 
-        if (fraudCheckResponse.isFraudster()) {
+        if (fraudCheckResponse.getIsFraudster()) {
             throw new IllegalStateException("fraudster");
         }
 
